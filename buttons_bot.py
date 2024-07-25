@@ -9,15 +9,15 @@ from aiogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, KeyboardBut
 start_btn = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text= 'Калькулятор', callback_data= 'ctg1')],
     [InlineKeyboardButton(text= 'Конвертор', callback_data= 'ctg2')],
-    [InlineKeyboardButton(text= 'Поддержка', callback_data= 'ctg3')]
 ])
 
-ctg1_btn = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text= 'Сетевой', callback_data= 'set')],
-    [InlineKeyboardButton(text= 'Локальный', callback_data= 'loc')],
-    [InlineKeyboardButton(text= 'Вернуться к выбору', callback_data= 'back')]
-    ]
-)
+# ctg1_btn = InlineKeyboardMarkup(inline_keyboard=[
+#     [InlineKeyboardButton(text= 'Сетевой', callback_data= 'set')],
+#     [InlineKeyboardButton(text= 'Локальный', callback_data= 'loc')],
+#     [InlineKeyboardButton(text= 'Вернуться к выбору', callback_data= 'back')]
+#     ]
+# )
+
 
 ctg2_btn = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Машинный', callback_data='mech')],
@@ -28,3 +28,8 @@ ctg2_btn = InlineKeyboardMarkup(inline_keyboard=[
 backkk_btn = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text= 'Вернуться к выбору', callback_data= 'back')]
 ])
+
+support_btn = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Приступить', callback_data='go')],
+    [InlineKeyboardButton(text= 'Вернуться к выбору', callback_data='back')]
+    ]) 
