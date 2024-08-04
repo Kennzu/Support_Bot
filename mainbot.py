@@ -17,7 +17,7 @@ import time
 import hashlib
 from io import BytesIO
 
-from cnf import TOKEN
+from cnf import TOKEN, ID
 import buttons_bot as bb
 import admin_buttons as ab
 
@@ -35,7 +35,7 @@ async def main():
 
 @dp.message(CommandStart())
 async def start_msg(message: Message):
-    if message.from_user.id == 745764314:
+    if message.from_user.id == ID:
         await message.answer('''Добро пожаловать!✋
 Это бот для навигации сотрудников по работе с задачами нашей компании.
 Выберите один из пунктов для продолжения работы💻: ''', reply_markup= await ab.admin_btns())
@@ -47,7 +47,7 @@ async def start_msg(message: Message):
 @dp.message(Command('support'))
 async def supp(message: Message):
     a = message.from_user.id
-    if a == 745764314:
+    if a == ID:
         await message.answer('''❓Если у вас возникли проблемы при работе с CRM, то обратитесь в поддержку''', reply_markup=ab.admin_btn)
     else:
         print(message.from_user.id)
@@ -56,7 +56,7 @@ async def supp(message: Message):
 @dp.callback_query(F.data == 'back_admin')
 async def supp(callback: CallbackQuery):
     a = callback.from_user.id
-    if a == 745764314:
+    if a == ID:
         await callback.message.edit_text('''❓Если у вас возникли проблемы при работе с CRM, то обратитесь в поддержку''', reply_markup=ab.admin_btn)
     else:
         print(callback.from_user.id)
@@ -218,7 +218,7 @@ async def status(callback: CallbackQuery):
     
 @dp.callback_query(F.data == 'back')
 async def menu_b(callback: CallbackQuery):
-    if callback.from_user.id == 745764314:
+    if callback.from_user.id == ID:
         await callback.message.answer('''Добро пожаловать!✋
 Это бот для навигации сотрудников по работе с задачами нашей компании.
 Выберите один из пунктов для продолжения работы💻: ''', reply_markup= await ab.admin_btns())
@@ -319,7 +319,7 @@ async def ff(callback: CallbackQuery, state: FSMContext):
 
 @dp.callback_query(F.data == 'ctg2')
 async def category_1(callback: CallbackQuery):
-    if callback.from_user.id == 745764314:
+    if callback.from_user.id == ID:
         pass
     else:
         await callback.message.answer('''📚 Выберите документацию:''', reply_markup= bb.ctg2_btn)
